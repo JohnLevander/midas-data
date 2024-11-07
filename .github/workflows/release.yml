@@ -10,11 +10,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-xl
     container: obolibrary/odkfull:v1.4
     strategy:
       max-parallel: 1
     steps:
+      - name: Increase heap size
+        env:
+          JAVA_OPTS: '-Xmx128g'
+        run: echo "Heap size increased"
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
