@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest-xl
+    runs-on: ubuntu-20.04-xl
     container: obolibrary/odkfull:v1.4
     strategy:
       max-parallel: 1
